@@ -1,5 +1,5 @@
 Login Page
-![Uploading image]([Uploading image.png])
+![Uploading image](Uploading image.png)
 
 
 # MovieApp
