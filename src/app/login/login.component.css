@@ -1,0 +1,54 @@
+.fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+.error {
+  margin: 0px;
+      padding: 0px;
+      font-size: 23px;
+      font-family: arial;
+      color: red;
+      text-align: center;
+}
+
+.container {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 756px;
+  overflow-x: hidden;
+    width: 100%;
+    background: radial-gradient(#653d84, #332042);
+    position: relative;
+}
+.right-inductor-container {
+  /* border-radius: 10px; */
+  height: 379px;
+}
+.right-inductor{
+  height: 380px;
+  width: 375px;
+}
+
+.form {
+  min-width: 150px;
+  max-width: 375px;
+  width: 100%;
+  padding: 36px;
+  background: white;
+    /* border-radius: 10px; */
+    height: 305px;
+}
+
+.form-element {
+  padding: 5px 0px 25px 2px;
+  width: 100%;
+}
+
+.button {
+  width: 100%;
+}

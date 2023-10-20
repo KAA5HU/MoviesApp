@@ -1,0 +1,40 @@
+.dialog {
+    padding: 10px;
+    height: 600px;
+    width: 600px;
+}
+.avatar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 250px;
+    img {
+
+    }
+}
+.second-part {
+    display:  flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+.title-con  {
+}
+h1 {
+    color:#7f7f7f; 
+    margin-top:0px; 
+    font-family:arial; 
+    font-size:27px;
+}
+h2 {
+    color:red; 
+    margin-top:0px; 
+    font-family:arial; 
+    font-size:24px;
+}
+.dialog-description {
+    color:black; 
+    margin-top:0px; 
+    font-family:arial; 
+    font-size:20px;
+}

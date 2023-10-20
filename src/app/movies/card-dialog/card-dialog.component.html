@@ -1,0 +1,16 @@
+<div class="dialog">
+    <h1 (click)="onclose()" style="float: right;">X</h1>
+    <div class="avatar">
+        <img src="{{card?.url}}" />
+    </div>
+    <div class="second-part">
+        <div class="title-con">
+            <h1>{{card.title}}</h1>
+            <h2>{{card.genres}}</h2>
+        </div>
+        <div class="dialog-description">
+            {{card.description}}
+        </div>
+    </div>
+
+</div>

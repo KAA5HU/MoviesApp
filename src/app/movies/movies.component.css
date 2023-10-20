@@ -1,0 +1,89 @@
+.example-card {
+    /* max-width: 200px; */
+    margin: 10px;
+    height: 300px;
+  }
+  .button-con {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  button {
+    height: 41px;
+    width: 93px;
+    background: #c0a4b6;
+    color: white;
+    border: 0px;
+  }
+  .header{
+    background: #f0f0f0;
+    padding: 14px 5px;
+    font-size: 22px;
+    font-family: arial;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-right: 80px;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+    width: 28%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  mat-card-title {
+      color:#7f7f7f; 
+      margin-top:0px; 
+      font-family:arial; 
+      font-size:12px;
+      align-self: center;
+  }
+  mat-card-subtitle {
+    color:#ff671b; 
+    line-height:18px;
+    font-size:15px;
+    align-self: center;
+  }
+  /* ::ng-deep { */
+    .mat-mdc-card-header {
+        align-self: flex-start;
+    }
+  /* } */
+  .movie-description{
+        font-size: 17px;
+        font-family: arial;
+        text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    /* height: 109px; */
+    width: 258px;
+    }
+    input {
+      height: 34px;
+    width: 232px;
+    margin-top: 17px;
+    }
+    .search-container {
+      text-align: center;
+    }
+    .main-heading-name {
+      font-size: 20px;
+      font-family: arial;
+      padding-left: 20px;
+    }
