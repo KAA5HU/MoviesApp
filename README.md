@@ -1,6 +1,9 @@
 Movies app will help user to search based on movie and each time 10 movies will be displayed 
 at the bottom pagination is attached (Click on pagination new 10 movies will be shown)
 
+Click on each card or movie dialog box is will open 
+shown the dietails of movie
+
 Login Page (/login)
 ![image](https://github.com/KAA5HU/MoviesApp/assets/37861667/9c82eebd-1f77-4794-a596-3290ae8ca0bc)
 
