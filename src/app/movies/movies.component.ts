@@ -3,9 +3,10 @@ import { Router } from '@angular/router';
 import { MovieServiceService } from './movieService/movie-service.service';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { Observable, map } from 'rxjs';
+import { Observable, debounce, interval, map, of, switchMap } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { CardDialogComponent } from './card-dialog/card-dialog.component';
+import { FormControl } from '@angular/forms';
 
 export interface Card {
   title: string;
@@ -24,6 +25,7 @@ export class MoviesComponent implements OnInit {
     public dialog: MatDialog
     ) {
      }
+     search_word = new FormControl();
      cards: any = [];
       filteredCards: any = []
      next = '';
@@ -34,13 +36,32 @@ export class MoviesComponent implements OnInit {
      image: any;
      showRefresh: any;
      searchText: any;
+     result_list: any;
     
     ngOnInit(): any {
       this.getMovies('');
         this.filteredCards.forEach((card: any) => {
           card.url = `https://ui-avatars.com/api/?name=${card.title}`;
       });
+      this.search_word.valueChanges.pipe(
+        debounce(() => interval(250)),
+        switchMap(value => this.search(value))
+      ).subscribe(res => {
+        this.result_list = res;
+      },
+      err => {
+        console.error(err.error);
+      });
+
       
+    }
+
+    search(keyword: string): Observable<any> {
+      console.log(keyword);
+      var result= this.cards.filter((element: any)=>{
+        return element.title.toLowerCase()== element.toLowerCase();
+      });
+      return of(result)
     }
 
 
@@ -90,11 +111,10 @@ export class MoviesComponent implements OnInit {
     });
   }
   onSearch(event: any) {
-    console.log(event)
     let value = event.target.value
     if (value.length > 3) {
       this.filteredCards = this.cards.filter((element: any)=>{
-        return element.title.toLowerCase()== value.toLowerCase();
+        return element.title.toLowerCase().includes(value.toLowerCase());
       });
       console.log(this.filteredCards)
     } else {

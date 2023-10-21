@@ -18,7 +18,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     AppComponent,
     LoginComponent,
     MoviesComponent,
-    ThemeNavigationComponent
+    ThemeNavigationComponent,
   ],
   imports: [
     BrowserModule,
