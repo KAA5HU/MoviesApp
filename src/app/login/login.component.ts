@@ -1,28 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { AuthenticationService } from './authentication/authentication.service';
 import { Subject, takeUntil } from 'rxjs';
+import { MatSlideToggleChange } from '@angular/material/slide-toggle';
+import { DOCUMENT } from '@angular/common';
 
 @Component({ 
   templateUrl: 'login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  get isDarkMode(): boolean {
+    return this.currentTheme === 'theme-dark';
+  }
+
+  private currentTheme = 'theme-light';
 
   formGroup: FormGroup = new FormGroup({});
   loginDis = false;
   subscript = new Subject();
-  errorMessage: any = ''
+  errorMessage: any = '';
   constructor(
     private formBuilder: FormBuilder,
     private readonly authService: AuthenticationService,
     private readonly router: Router,
+    @Inject(DOCUMENT) private document: Document,
+    private renderer: Renderer2
     ) { }
 
   ngOnInit() {
     this.createForm();
+    this.currentTheme = localStorage.getItem('activeTheme') || 'theme-light';
+    this.renderer.setAttribute(this.document.body, 'class', this.currentTheme);
   }
 
   createForm(data?: any) {
@@ -53,5 +64,10 @@ export class LoginComponent implements OnInit {
     } else {
       this.loginDis = false;
     }
+  }
+  switchMode(isDarkMode: boolean) {
+    this.currentTheme = isDarkMode ? 'theme-dark' : 'theme-light';
+    this.renderer.setAttribute(this.document.body, 'class', this.currentTheme);
+    localStorage.setItem('activeTheme', this.currentTheme);
   }
 }

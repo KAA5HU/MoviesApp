@@ -10,13 +10,15 @@ import { MaterialModule } from './material.module';
 import { MoviesComponent } from './movies/movies.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MovieServiceService } from './movies/movieService/movie-service.service';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ThemeNavigationComponent } from './theme-navigation/theme-navigation.component';
+import { LayoutModule } from '@angular/cdk/layout';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    MoviesComponent
+    MoviesComponent,
+    ThemeNavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -26,8 +28,10 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MaterialModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    LayoutModule
   ],
+  exports: [ThemeNavigationComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

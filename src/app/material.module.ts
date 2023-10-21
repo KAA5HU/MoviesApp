@@ -18,6 +18,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 
@@ -47,12 +49,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     // MatSelectModule,
     // MatSidenavModule,
     // MatSliderModule,
-    // MatSlideToggleModule,
+    MatSlideToggleModule,
     // MatSnackBarModule,
     // MatSortModule,
     // MatTableModule,
     // MatTabsModule,
-    // MatToolbarModule,
+    MatToolbarModule,
     // MatTooltipModule,
     // MatStepperModule,
   ],
@@ -80,12 +82,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     // MatSelectModule,
     // MatSidenavModule,
     // MatSliderModule,
-    // MatSlideToggleModule,
+    MatSlideToggleModule,
     // MatSnackBarModule,
     // MatSortModule,
     // MatTableModule,
     // MatTabsModule,
-    // MatToolbarModule,
+    MatToolbarModule,
     // MatTooltipModule,
     // MatStepperModule,
   ]    

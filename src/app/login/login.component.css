@@ -52,3 +52,16 @@
 .button {
   width: 100%;
 }
+
+:host {
+  height: 100vh;
+  display: block;
+}
+.content {
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.card-content {
+  padding: 1rem;
+}

@@ -21,4 +21,10 @@
   
     </form>
     <div class="right-inductor-container"><img class="right-inductor" src="../../assets/download.png" alt=""></div>
+    <div style="position: absolute;top: 0px;right: 10px;">
+      <app-theme-navigation
+        (darkModeSwitched)="switchMode($event)"
+        [isDarkMode]="isDarkMode"
+      ></app-theme-navigation>
+    </div>
   </div>
